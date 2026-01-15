@@ -1,0 +1,221 @@
+/* App.css - Centered & Rounded Professional Theme */
+:root {
+  --primary: #4361ee;
+  --success: #2ec4b6;
+  --danger: #e71d36;
+  --dark: #011627;
+  --gray: #8d99ae;
+  --bg: #f0f2f5;
+  --card-bg: #ffffff;
+  --shadow: 0 10px 25px rgba(0,0,0,0.08); /* Softer, deeper shadow */
+  --radius: 25px; /* EXTRA ROUNDED corners */
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--dark);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* Centers the whole app on large screens */
+}
+
+/* Main Container - Perfectly Centered */
+.dashboard-container {
+  width: 100%;
+  max-width: 1200px; /* Limits width so it doesn't stretch too much */
+  margin: 20px; /* Adds space around edges on mobile */
+  padding: 0;
+}
+
+/* Header - CENTER ALIGNED */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-top: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin: 0;
+}
+
+/* Summary Cards Grid */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-content h4 {
+  margin: 0 0 5px 0;
+  color: var(--gray);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-content .money {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* Colors */
+.balance .money { color: var(--primary); }
+.income .money { color: var(--success); }
+.expense .money { color: var(--danger); }
+
+/* Icons */
+.icon-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Perfectly Round Icon Background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.balance-icon { background: #eef2ff; color: var(--primary); }
+.income-icon { background: #e0fbf9; color: var(--success); }
+.expense-icon { background: #ffe5e9; color: var(--danger); }
+
+/* Main Grid Layout */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Equal width columns */
+  gap: 30px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .main-grid { grid-template-columns: 1fr; }
+}
+
+/* White Cards (Form & History & Chart) */
+.white-card {
+  background: var(--card-bg);
+  padding: 35px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+  text-align: center; /* CENTERS TEXT inside cards */
+}
+
+.white-card h3 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 1.4rem;
+  color: var(--dark);
+  font-weight: 700;
+}
+
+/* Form Inputs */
+.input-group { margin-bottom: 20px; text-align: left; } /* Labels stay left for readability */
+
+.input-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #f1f3f5;
+  border-radius: 15px; /* Rounded Inputs */
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: all 0.3s;
+  background: #fdfdfd;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.1);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--primary), #3a0ca3);
+  color: white;
+  border: none;
+  border-radius: 15px; /* Rounded Button */
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+}
+
+/* List Styling */
+.transaction-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.transaction-item {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.transaction-item:hover {
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transform: scale(1.02);
+}
+
+.t-title { font-weight: 700; font-size: 1.05rem; }
+.t-cat { font-size: 0.9rem; color: var(--gray); margin-top: 4px; display: block;}
+.t-amount { font-weight: 800; font-size: 1.1rem; }
+
+/* Chart Centering */
+.chart-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontal Center */
+  justify-content: center; /* Vertical Center */
+  min-height: 400px;
+}
