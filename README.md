@@ -109,7 +109,8 @@ npm run dev
 ---
 
 ## 👩‍💻 Author
-**Sameksha**  
+1. Sameksha - PES1PG25CS057
+2. Sereen Varghese - PES1PG25CS059
 M.Tech – Computer Science  
 Full Stack Development Project
 
